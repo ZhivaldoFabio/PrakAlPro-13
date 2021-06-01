@@ -1,0 +1,35 @@
+# Zhivaldo Fabio H.
+# 71200608
+
+''' Sumber soal dari youtube-->
+Seorang Guru ingin mengajarkan muridnya berlogika.
+Guru ini menyuruh muridnya menyelesaikan sebuah permainan.
+Permainan ini terdiri dari 3 tiang kecil dan 3 cincin yang memiliki ukuran yang berbeda.
+Murid ini disuruh untuk memindahkan (N) cincin yang berurutan ukurannya,
+ke tiang yg di tengah. akan tetapi cincin yang lebih besar tidak boleh berada diatas
+cincin yang lebih kecil. Bantu anak mu (muridnya) mengerjakan permainan ini
+agar mendapatkan nilai bagus. Buatlah Program yang bisa menyelesaikan teka teki
+permainan ini dengan hanya memasukan jumlah cincin (N) yang Guru minta.
+
+if ur confuse abt the language u can try to translate it on gtranslate or just ignore it cuz it is not that important
+'''
+
+# Input     : Memasukan Jumlah Cincin yang diperintahkan oleh Guru. (N)
+# Process   : Jumlah angka dimasukan ke dalam fungsi yang dimana fungsi akan memproses.
+#             nilai N akan di permainkan dengan cara rekursif untuk memindahkan dari 
+#             tiang awal(t1/A) ke tiang tujuan(t2/B)
+# Output    : Output akan menunjukan Proses cara melakukan permainan logika nya.
+
+# Cincin Nilai Bonus / Game 3 Tiang 3 Cincin
+def CincinNilai(n, t1, t2, t3):
+    if n == 1:
+        print ('Pindahkan Cincin 1 dari tiang',t1,'ke tiang',t2)
+        return
+    CincinNilai (n - 1, t1, t3, t2)
+    print ('Pindahkan Cincin',n,'dari tiang',t1,'ke tiang',t2)
+    CincinNilai (n - 1, t3, t2, t1)
+
+n = int(input('Masukkan jumlah Cincin (Angka)\n>> '))
+CincinNilai(n,'A','B','C')
+
+# Curang demi nilai 2021
